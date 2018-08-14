@@ -34,7 +34,7 @@ app.use('/users', usersRouter);
 mongoose.connect('mongodb://localhost:27017/Mychat');
 
 // Port setUp
-app.listen(3000, () =>{
+app.listen(8888, () =>{
     console.log('lestenning on port 3000 ...')
 })
 
