@@ -2,107 +2,45 @@
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </head>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+    <script src="js/socket.io.js"></script>
+</head>
   <body>
    <link rel="stylesheet" href="css/index.css" >
-  <div id="container">
-      <% if (errors) { %>
-        <% errors.forEach(function(error) { %>
-            <div class="alert alert-info">
-                    <strong>Error ! </strong><%=error.msg%>   
-            </div>
-        <% }); %>
-      <%}%>
+        <div id="container">
+            <% if (errors) { %>
+                <% errors.forEach(function(error) { %>
+                        <div class="alert alert-info">
+                                <strong>Error ! </strong><%=error.msg%>   
+                        </div>
+                <% }); %>
+            <%}%>
 
-      <% if (success) { %>
-            <div class="alert alert-success">
-                    <strong>Success ! </strong><%=success%>   
-            </div>
-        <% }; %>
-  <% if (title == "Login") { %>
+            
+            <% if (success) { %>
+                        <div class="alert alert-success">
+                                <strong>Success ! </strong><%=success%>   
+                        </div>
+            <% }; %>
 
-  <!-- Default form login -->
-<form class="text-center border border-light p-5" method="POST" action="/">
+                
+            <% if (title == "Login") { %>
+                    <%- include login.ejs %>
+             
+            <%}%>
 
-    <p class="h4 mb-4">Sign in</p>
 
-    <!-- Email -->
-    <input type="email" name="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
-
-    <!-- Password -->
-    <input type="password" name="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
-
-    <div class="d-flex justify-content-around">
-        <div>
-            <!-- Remember me -->
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" name="Remember" class="custom-control-input" id="defaultLoginFormRemember">
-                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
-            </div>
+            <% if (title == "regester") { %>
+                <% include regester %>
+            
+            <%}%>
+               
         </div>
-        <div>
-            <!-- Forgot password -->
-            <a href="">Forgot password?</a>
-        </div>
-    </div>
 
-    <!-- Sign in button -->
-    <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
-
-    <!-- Register -->
-    <p>Not a member?
-        <a href="/regester">Register</a>
-    </p>
-
-
-
-</form>
-<!-- Default form login -->
-<%}%>
-<% if (title == "regester") { %>
-
-    <!-- Default form register -->
-<form class="text-center border border-light p-5" method="POST" action="/regester">
-
-        <p class="h4 mb-4">Sign up</p>
-    
-        <div class="form-row mb-4">
-            <div class="col">
-                <!-- First name -->
-                <input type="text" name="firstname" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
-            </div>
-            <div class="col">
-                <!-- Last name -->
-                <input type="text" name="lastname" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
-            </div>
-        </div>
-    
-        <!-- E-mail -->
-        <input type="email" name="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
-    
-        <!-- Password -->
-        <input type="password" name="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-        </small>
-        <!--Confirme  Password -->
-        <input type="password" name="password2" id="defaultRegisterFormPassword" class="form-control" placeholder="Confirme Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-        <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-        </small>
-        <!-- Sign up button -->
-        <button class="btn btn-info my-4 btn-block" type="submit">Regester</button>
-        <p>
-                <a href="/">Sign in</a>
-        </p>
-    
-     
-    
-        <hr>
-    
-    </form>
-    <%}%>
-    <!-- Default form register -->
-  </div>
+        <% if (title == "home") { %>
+            <% include home %>
+        
+        <%}%>
 
   </body>
 </html>
