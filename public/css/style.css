@@ -7,6 +7,7 @@
 	border-radius:5px 5px 0px 0px;
 }
 
+
 .msg_head{	
 	background:rgb(41, 40, 48);
 	color:white;
@@ -17,7 +18,7 @@
 }
 
 .msg_body{
-	background:rgb(158, 160, 165);
+	background:rgb(214, 216, 221);
 	height:200px;
 	font-size:12px;
 	padding:15px;
@@ -54,7 +55,7 @@
 
 .msg-left{
 	position:relative;
-	background:#c5c2f1;
+	background:#625ad4;
 	padding:5px;
 	min-height:10px;
 	margin-bottom:5px;
@@ -63,8 +64,17 @@
 	word-break: break-all;
 }
 
+
+
+p.feedback{
+    color: rgb(114, 51, 51);
+    padding: 14px 0px;
+	margin: 0 20px;
+	font-weight: 900;
+}
+
 .msg-right{
-	background:#dacccc;
+	background:#dd6969;
 	padding:5px;
 	min-height:15px;
 	margin-bottom:5px;
@@ -76,14 +86,17 @@
 /**** Slider Layout Popup *********/
 
  #chat-sidebar {
-     width: 250px;
-     position: fixed;
+     width: 17%;
      height: 100%;
      right: 0px;
      top: 0px;
      padding-top: 10px;
      padding-bottom: 10px;
-     border: 1px solid #b2b2b2;
+	 border: 1px solid #b2b2b2;
+	 min-width: 200px;
+	 position: fixed ;
+	 float: right
+
 }
  #sidebar-user-box {
      padding: 4px;
@@ -114,8 +127,92 @@
      line-height:30px;
      margin-left:5px;
 }
- 
 
+
+em { font-style: italic; }
+
+
+
+
+dd { margin: 0; padding: 2px 0 5px; margin-bottom: 5px; border-bottom: 1px dotted #555555; }
+
+h4{
+/* position: fixed ; */
+color: #6D7781 ;
+font-family: 'Sofia', cursive ; 
+width: 80% ;
+text-align: center
+
+}
+
+
+input#submit
+{
+    background: #7799bb ;
+border: 0 ; 
+width: 80%;
+height: 40px ; 
+border-radius: 3px ; 
+color: #fff ; 
+font-size: 12px ; 
+cursor: pointer ; 
+opacity: 0.5
+}
+
+button:hover {
+    background: #06407a ; 
+animation-name: shake
+}
+
+input#text{
+	position: relative;
+    width: 80%; 
+padding: 30px 0px ; 
+background-color: transparent ;
+border: 0 ; 
+border-bottom: 1px solid #727e8b ; 	
+color: rgb(141, 166, 190) ; 
+font-size: 16px ; 
+}
+
+
+.actualite{
+	position: fixed ; 
+	overflow: visible;
+	width: 60%;
+	top: 100px;
+	overflow:visible;
+	overflow-x: hidden;
+	height: 400px;
+
+}
+
+
+/* Header */
+
+.header {
+	position: fixed;
+	width: 60%;
+	top: 30px;
+	margin-bottom: 30px ;
+	margin-left: 6%
+	
+}
+
+
+.header h2 {
+	text-align: right;
+	letter-spacing: normal;
+	font-size: 1em;
+	color: rgb(146, 180, 214) ;
+	font-family: 'Sofia', cursive ; 
+	text-align: center ;
+	text-transform: uppercase; 
+	width: 60%;
+	text-align: center ;
+	font-size: 30px ; 	
+	
+}
 
 
 

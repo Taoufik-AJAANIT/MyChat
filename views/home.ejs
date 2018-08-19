@@ -2,33 +2,22 @@
 <script src="js/jquery-1.10.1.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/connection.js"></script>
-
-
-
-<center>
-  <strong>
-    <h1>Welcom  </h1>
-    <i id="firstname"><%=data.firstname%> </i>
-    <i id="lastname"><%=data.lastname%> </i>
-    <i id="email" hidden><%=data.email%> </i>
-  </strong>
-</center>
-
-<div id="chat-sidebar">
-      <a  href="/users/logout"> 
-        <strang>  
-          <button class="btn btn-info" id="btn">
-              <strong>SignOut </strong>
-          </strang>
-          </button>
-        </strang>
-      </a>
-  <div class="alert alert-info ">
-     <strong>Fiends Online</strong>
-  </div>
-  <div id="online">
-    
+<div class="container">
+  <div class="header">
+      <h2>
+          <i id="firstname"><%=data.firstname  %></i>
+          <i id="lastname"><%= data.lastname %></i>
+          <i id="email" hidden><%= data.email %></i>
+        </h2>
   </div>
 
+  <div class="actualite">
+      <% include actualite %>
+  </div>
+  <div class="online">
+      <% include online %>
+  </div>
+</div>
 
-</div>	
+
+

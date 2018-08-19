@@ -52,7 +52,7 @@ io.on('connection', socket => {
  
     socket.on('logged', data => {
                
-        let indice = usersOnline.findIndex(e => e.email == data.email)  
+        let indice = usersOnline.findIndex(e => e.email == data.email) 
         if (indice == -1) {
 
             socketsInfo.push({socketid : socket.id,email : data.email})
@@ -61,6 +61,7 @@ io.on('connection', socket => {
 
         }
         else {
+            io.sockets.connected[socketsInfo[indice].socketid].emit('logout',data)
             socketsInfo[indice].socketid = socket.id  
         }
     })
@@ -88,6 +89,20 @@ io.on('connection', socket => {
             
         }
 
+    })
+
+    socket.on('stopTyping', data => {
+        for (let i = 0 ; i < socketsInfo.length ; i++){
+            if (socketsInfo[i].email.localeCompare(data.emailTo ) == 0)
+            {
+                io.sockets.connected[socketsInfo[i].socketid].emit('stopTyping',data)
+            }
+        }
+    })
+
+    socket.on('publier', data => {
+        // console.log(data.text+data.name)
+        io.sockets.emit('publier',data)
     })
 
 

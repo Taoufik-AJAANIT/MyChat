@@ -3,8 +3,8 @@
     margin-left: auto ;
     margin-right : auto;
     margin-top: 1cm ;
-    margin-bottom: auto
-    
+    margin-bottom: auto ;
+  
 
 }
 body {
@@ -15,9 +15,36 @@ body {
     background-attachment: fixed;
     background-position: center; 
     background-size: 100% 100%;
+    font-family: 'Nunito';
+    overflow: auto;
+ 
+    /* min-height: 1200px */
+
     }
 #btn {
 width: 6cm;
 margin-bottom: 1cm ;
 margin-left: 0.25cm
+}
+
+
+
+#footer {
+	position: fixed ;
+	margin: 0 auto;
+	background: #D0D1C7;
+	opacity: 0.6;
+	bottom: 0px ;
+	right: 0px ;	
+    width: 100% ;
+}
+
+#footer * {
+	color: #5F5F5F;
+}
+
+#footer p {
+	margin: 0;
+	padding: 10px 0;
+	text-align: center;
 }

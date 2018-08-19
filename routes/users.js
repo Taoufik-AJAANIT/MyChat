@@ -16,7 +16,7 @@ router.get('/', (req , res) =>
             
             
             res.render('index',{title : 'home',errors:false,success:false,data:results})
-           
+            
         })
         
         
